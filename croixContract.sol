@@ -1,4 +1,4 @@
-pragma solidity ^0.4.19;
+pragma solidity ^0.4.18;
 
 contract CroixCoin {
   /* listen for token transfers */
@@ -18,7 +18,7 @@ contract CroixCoin {
     decimals = decimalUnits;
   }
 
-  function transfer(address _to, uint256 _value) {
+  function transfer(address _to, uint256 _value) public {
     /* check that sender has sufficient funds */
     require(balanceOf[msg.sender] >= _value && balanceOf[_to] + _value >= balanceOf[_to]);
 
